@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+*{
+    box-sizing: border-box;
+    
+}
+
+body{
+    background-image: url(image/freepik.png);
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+h1{
+    text-align: center;
+    margin-bottom: 50rem;
+    position: absolute;
+    color: rgb(197, 113, 9);
+}
+.container{
+    display: flex;
+    width: 90vw;
+}
+.panel{
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    margin-top: 10%;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+
+.panel h3{
+    font-size: 24px;
+    bottom: 20px;
+    position: absolute;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+.panel:hover{
+    bottom: 20px;
+    opacity: 0.8;
+}
+.panel.active{
+    flex: 5;
+}
+.panel.active h3{
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+@media (max-wdth: 480px){
+    .container{
+        width: 100vw;
+    }
+    .panel:nth-of-type(4)
+    .panel:nth-of-type(5){
+        display: none;
+    }
+}
+.panel{
+    /* outline: 1px solid #f39c12; */
+    outline-offset: 1px; 
+    animation: slide 10s infinite linear;
+    /* border: 1px double #f39c12; */
+    border: 1px dotted #f39c12;
+    /* box-shadow: 0 4px 8px rgba(212, 53, 53, 0.1); */
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    30% {
+        transform: translateX(60%);
+    }
+}
