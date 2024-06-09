@@ -1,52 +1,47 @@
+const progress = document.getElementById('progress')
+const prev = document.getElementById('prev')
+const next = document.getElementById('next')
+const circles = document.querySelectorAll('.circle')
 
-document.addEventListener('DOMContentLoaded', function() {
-    const numbers = document.querySelectorAll('.number');
-    const bars = document.querySelectorAll('.bar');
-    const prevButton = document.querySelector('.button:nth-of-type(1)');
-    const nextButton = document.querySelector('.button:nth-of-type(2)');
-    let currentIndex = 0;
+let currentActive = 1
 
-    numbers.forEach((number, index) => {
-        number.addEventListener('click', () => {
-            clearSelection();
-            number.classList.add('selected');
-            updateBarColor(index);
-            currentIndex = index;
-        });
-    });
+next.addEventListener('click', () => {
+    currentActive++
 
-    prevButton.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            clearSelection();
-            currentIndex--;
-            numbers[currentIndex].classList.add('selected');
-            updateBarColor(currentIndex);
-        }
-    });
+    if(currentActive > circles.length){
+        currentActive = circles.length
+    }
+    update()
+})
 
-    nextButton.addEventListener('click', () => {
-        if (currentIndex < numbers.length - 1) {
-            clearSelection();
-            currentIndex++;
-            numbers[currentIndex].classList.add('selected');
-            updateBarColor(currentIndex);
-        }
-    });
+prev.addEventListener('click', () => {
+    currentActive--
 
-    function clearSelection() {
-        numbers.forEach(number => number.classList.remove('selected'));
-        bars.forEach(bar => bar.classList.remove('selected'));
+    if(currentActive < 1){
+        currentActive = 1
     }
 
-    function updateBarColor(index) {
-        if(index > 0) {
-            bars[index - 1].classList.add('selected');
+    update()
+})
+
+function update(){
+    circles.forEach((circle, idx) => {
+        if(idx < currentActive){
+            circle.classList.add('active')
+        }else{
+            circle.classList.remove('active')
         }
-        for (let i = 0; i < index; i++) {
-            numbers[i].classList.add('selected');
-            if (i < index) {
-                bars[i].classList.add('selected');
-            }
-        }
+    })
+    const actives = document.querySelectorAll('.active')
+
+    progress.style.width = (actives.length - 1) / (circles.length - 1) * 100 + '%'
+
+    if(currentActive === 1) {
+        prev.disabled = true
+    }else if(currentActive === circles.length) {
+        next.disabled = true
+    }else{
+        prev.disabled = false
+        next.disabled = false
     }
-});
+}
