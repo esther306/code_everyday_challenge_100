@@ -9,10 +9,34 @@
 }
 .container{
     text-align: center;
+    background: rgba(255, 255, 255, .3);
+    padding: 5rem;
+    height: 350px;
+    border-radius: 20px;
+    border-left: 1px solid rgba(255, 255, 255, .3);
+    border-top: 1px solid rgba(255, 255, 255, .3);
+    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, .2);
+    
+}
+.container {
+    width: 50;
+    height: 350px;
+    /* background-color: #3498db; */
+    position: relative;
+    animation: move 2s infinite alternate;
+}
+
+@keyframes move {
+    10% {
+        right: 10px;
+    }
+    100% {
+        right: 200px;
+    }
 }
 
 body{
-    background-color: #f6f7fb;
+    background: linear-gradient(45deg, #975a67, #5262ad, #e0e0e0);
     font-family: 'Muli', sans-serif;
     display: flex;
     align-items: center;
@@ -68,7 +92,7 @@ body{
     border-color: var(--line-border-fill);
 }
 .btn{
-    background-color: var(--line-border-fill);
+    /* background-color: var(--line-border-fill); */
     color: #fff;
     border: 0;
     border-radius: 5px;
@@ -77,6 +101,12 @@ body{
     padding: 8px 30px;
     margin: 5px;
     font-size: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+.btn:hover{
+    background: rgba(245, 25, 225, 0.2);
 }
 .btn:active{
     transform: scale(0.98);
@@ -85,6 +115,39 @@ body{
     outline: 0;
 }
 .btn:disabled{
-    background-color: var(--line-border-empty);
+    background: rgba(245, 25, 225, 0.2);
+    /* background-color: var(--line-border-empty); */
     cursor: not-allowed;
+}
+.number{
+    position: relative;
+    display: flex;
+    top: -23rem;
+    left: 15rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 10px;
+    padding: 15px;
+    /* text-align: center;
+    justify-content: center;
+    align-items: center; */
+}
+
+.number {
+    width: 50%;
+    background-color: rgba(255, 255, 255, .5);
+    animation: blink 1s infinite;
+}
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.1;
+    }
 }
