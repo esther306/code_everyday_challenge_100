@@ -1,7 +1,9 @@
-const open = document.getElementById('open')
-const close = document.getElementById('close')
-const container = document.querySelector('.container')
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById('menuToggle');
+    const logoNav = document.getElementById('logoNav');
 
-open.addEventListener('click', () => container.classList.add('show-nav'))
-
-close.addEventListener('click', () => container.classList.remove('show-nav'))
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('open');
+        logoNav.classList.toggle('active');
+    });
+});
