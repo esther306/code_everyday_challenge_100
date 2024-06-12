@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    /* font-size: 62.5%; */
+}
+body{
+    background-color: hsl(240, 66%, 83%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchBox{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchBox input{
+    width: 0rem;
+    padding: 0rem;
+    border: 0;
+    outline: 0;
+    border-radius: 0;
+    transition: .6s ease;
+}
+.searchBox:hover > input{
+    width: 15rem;
+    padding: 1rem;
+}
+.searchBox a{
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0;
+    background-color: rgba(0, 0, 255, 0.295);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+}
+.searchBox a i {
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+
+}
+.searchBox:hover > a i{
+    width: 18rem;
+    padding: 1rem;
+    color: rgb(26, 34, 37);
+}
+.searchBox:hover > a i{
+    display: inline-block;
+}    
