@@ -1,77 +1,27 @@
-/* *{
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+*{
     box-sizing: border-box;
 }
 body{
-    font-family: 'Roboto', sans-serif;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100vh;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-image: url(image/cat-on-the-wall.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-body{
- opacity: 0;
- animation: fadeIn 10s linear forwards;   
-}
-@keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  .percentage {
-    margin-top: 20px;
-    font-size: 24px;
-  } */
-  body {
+    font-family: 'Ubuntu', sans-serif;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     height: 100vh;
+    overflow: hidden;
     margin: 0;
-    background-image: url(image/cat-on-the-wall.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* background-color: #f0f0f0; */
-    font-family: Arial, sans-serif;
+} 
+.bg{
+    background: url(image/cathedral.jpg) no-repeat center center/cover;
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: calc(100vw + 60px);
+    height: calc(100vh + 60px);
+    z-index: -1;
+    filter: blur(0px);
 }
-
-.container {
-    text-align: center;
-}
-
-#myElement {
-    width: 100vh;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    /* background-color: blue; */
-    background-image: url(image/cat-on-the-wall.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0;
-    opacity: 0;
-    filter: blur(10px);
-    transition: opacity 10s linear, filter 10s linear;
-}
-
-
-
-#percentage {
-    top: -20rem;
-    font-size: 5rem;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+.loading-text{
+    font-size: 50px;
+    color: #fff;
 }

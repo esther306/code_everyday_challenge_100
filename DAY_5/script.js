@@ -1,20 +1,22 @@
-const myElement = document.getElementById('myElement');
-const percentageText = document.getElementById('percentage');
-let startTime = null;
+const loadText = document.querySelector('.loading-text')
+const bg = document.querySelector('.bg')
 
-function updatePercentage(timestamp) {
-    if (!startTime) startTime = timestamp;
-    const progress = timestamp - startTime;
-    const percentage = Math.min(100, (progress / 10000) * 100);
-    percentageText.textContent = `${Math.floor(percentage)}%`;
-    myElement.style.opacity = percentage / 100;
-    myElement.style.filter = `blur(${10 - (percentage / 10)}px)`;
+let load = 0
 
-    if (progress < 10000) {
-        requestAnimationFrame(updatePercentage);
-    } else{
-        percentageText.style.display = 'none';
+let int = setInterval(blurring, 30)
+
+function blurring(){
+    load++
+
+    if(load > 99){
+        clearInterval(int)
     }
+
+    loadText.innerText = `${load}%`
+    loadText.style.opacity = scale(load, 0, 100, 1, 0)
+    bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`
 }
-// Start the animation
-requestAnimationFrame(updatePercentage);
+
+const scale = (num, in_min, in_max, out_min, out_max) => {
+    return((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
+}
