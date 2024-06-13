@@ -1,60 +1,48 @@
+@import url('https:/fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 *{
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
 }
-html{
-    /* font-size: 62.5%; */
-}
 body{
-    background-color: hsl(240, 66%, 83%);
-    min-height: 100vh;
+    background-image: linear-gradient(90deg, #7d5fff, #7158e2);
+    font-family: 'Roboto', sans-serif;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
 }
-.searchBox{
+.search{
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 50px;
 }
-.searchBox input{
-    width: 0rem;
-    padding: 0rem;
+.search .input{
+    background-color: #fff;
     border: 0;
-    outline: 0;
-    border-radius: 0;
-    transition: .6s ease;
+    font-size: 18px;
+    padding: 15px;
+    height: 50px;
+    width: 50px;
+    transition: width 0.3s ease;
 }
-.searchBox:hover > input{
-    width: 15rem;
-    padding: 1rem;
-}
-.searchBox a{
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 0;
-    background-color: rgba(0, 0, 255, 0.295);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.btn{
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
     position: absolute;
-    right: 1rem;
-    cursor: pointer;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    transition: transform 0.3s ease;
 }
-.searchBox a i {
-    font-size: 1.5rem;
-    color: #fff;
-    cursor: pointer;
-
+.btn:focus,.input:focus{
+    outline: none;
 }
-.searchBox:hover > a i{
-    width: 18rem;
-    padding: 1rem;
-    color: rgb(26, 34, 37);
+.search.active .input{
+    width: 200px;
 }
-.searchBox:hover > a i{
-    display: inline-block;
-}    
+.search.active .btn{
+    transform: translateX(198px);
+}
