@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: ' Roboto,Ubuntu', sans-serif;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 5px;
+    background-color: bisque;
+}
+.container{
+    width: 100%;
+    max-width: 400px
+} 
+.box{
+    font-size: 3rem;
+    border:0 ;
+    border-radius: 8px;
+    background-color: #2323ee;
+    color: aliceblue;
+    margin: 1rem;
+    padding: 4rem;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.5s;
+}
+.box.content{
+    opacity: 0;
+    transform: translateX(100%);
+}
+.box.show-from-left{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.box.show-from-right{
+    opacity: 1;
+    transform: translateX(0);
+}
