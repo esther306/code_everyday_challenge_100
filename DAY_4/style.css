@@ -18,8 +18,9 @@ body{
 }
 .search .input{
     background-color: #fff;
-    border: 0;
+    border: 2px solid #5e7e99;
     font-size: 18px;
+    border-radius: 5rem;
     padding: 15px;
     height: 50px;
     width: 50px;
@@ -27,7 +28,8 @@ body{
 }
 .btn{
     background-color: #fff;
-    border: 0;
+    border:  2px solid #5e7e99;
+    border-radius: 5rem;
     cursor: pointer;
     font-size: 24px;
     position: absolute;
@@ -45,4 +47,64 @@ body{
 }
 .search.active .btn{
     transform: translateX(198px);
+}
+
+.btn {
+    background-color: hsl(240, 80%, 84%);
+    transition: background-color 0.5s ease;
+  }
+  
+  .btn:hover {
+    background-color: #f08f8f;
+  }
+
+  @keyframes rotate3d {
+    from {
+      transform: rotateY(100deg);
+      opacity: 2;
+    }
+    to {
+      transform: rotateY(360deg);
+      opacity: 0;
+    }
+  }
+  
+  .search {
+    animation: rotate3d 30s infinite linear;
+  }
+
+  @keyframes complexAnimation {
+    0% {
+      transform: translateX(0) scale(1);
+    }
+    50% {
+      transform: translateX(50px) scale(1.5);
+    }
+    100% {
+      transform: translateX(0) scale(1);
+    }
+}
+.search{
+    /* background-color: teal; */
+    animation: complexAnimation 4s infinite;
+}
+.input:hover{
+    background-color: #15191b;
+    color: teal;
+}
+
+@keyframes move {
+  to {
+    transform: translatey(100px);
+    z-index: 3px;
+  }
+}
+
+.search {
+  
+  animation-fill-mode: forwards;
+}
+
+div:hover {
+  animation: move 5s forwards;
 }
