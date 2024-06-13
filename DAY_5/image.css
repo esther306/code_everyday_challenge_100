@@ -12,7 +12,7 @@ body{
     margin: 0;
 } 
 .bg{
-    background: url(image/cathedral.jpg) no-repeat center center/cover;
+    background: url(image/senior-couple.jpg) no-repeat center center/cover;
     position: absolute;
     top: -30px;
     left: -30px;
@@ -25,3 +25,26 @@ body{
     font-size: 50px;
     color: #fff;
 }
+h1{
+    font-size: 3rem;
+    top: 5rem;
+    color: orange;
+    display: flex;
+    position: absolute;
+}
+@keyframes move {
+    from {
+      transform: translatey(0);
+    }
+    to {
+      transform: translatey(100px);
+    }
+  }
+  
+  h1 {
+    background-image: url(image/cat-on-the-wall.jpg);
+    animation: move 2s infinite alternate;
+    background: transparent;
+    border: 1px solid rgb(245, 159, 98);
+    border-radius: 5px;
+  }
