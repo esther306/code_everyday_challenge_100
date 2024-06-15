@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #efedd6;
+    background-color: #f8919a54;
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
@@ -18,7 +18,7 @@ h1{
     margin: 10px;
 }
 .box{
-    background-color: steelblue;
+    background-color: rgb(172, 70, 129);
     color: #fff;
     display: flex;
     align-items: center;
@@ -40,3 +40,15 @@ h1{
 .box h2{
     font-size: 45px;
 }
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .box {
+    animation: rotate 4s infinite linear;
+  }
