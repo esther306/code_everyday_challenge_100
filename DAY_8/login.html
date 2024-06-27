@@ -3,26 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Please Login</title>
+    <title>Form Input Ware</title>
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
     <div class="container">
-        <div class="box-login">
-            <h1>Please Login</h1>
-            <div class="input">
-                <input type="email" required>
+        <h1>Please Login</h1>
+        <form>
+            <div class="form-control">
+                <input type="text" required>
                 <label>Email</label>
             </div>
-            <div class="input">
+            <div class="form-control">
                 <input type="password" required>
                 <label>Password</label>
+                <!-- <label>
+                    <span style="transition-delay: 0ms">E</span>
+                    <span style="transition-delay: 50ms">m</span>
+                    <span style="transition-delay: 100ms">a</span>
+                    <span style="transition-delay: 150ms">i</span>
+                    <span style="transition-delay: 200ms">l</span>
+                </label> -->
             </div>
-            <button type="submit">Login</button>
-            <p>Don't have an account? <a href="#">Register</a></p>
-            </div>
-        </div>
+            <button class="btn">Login</button>
+            <p class="text">Don't have an account? <a href="#">Register</a></p>
+        </form>
     </container>
-    
+    <script src="login.js"></script>
 </body>
 </html>
