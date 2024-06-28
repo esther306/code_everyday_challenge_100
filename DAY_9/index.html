@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="song-buttons">
+        <div class="button" data-audio="audio1">Applause</div>
+        <div class="button" data-audio="audio2">Boo</div>
+        <div class="button" data-audio="audio3">Gasp</div>
+        <div class="button" data-audio="audio4">Tada</div>
+        <div class="button" data-audio="audio5">Victory</div>
+        <div class="button" data-audio="audio6">Wrong</div>
+    </div>
+    <audio id="audio1">
+        <source src="sound/applause.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio2">
+        <source src="sound/boo.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio3">
+        <source src="sound/gasp.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio4">
+        <source src="sound/tada.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio5">
+        <source src="sound/victory.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio6">
+        <source src="sound/wrong.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
